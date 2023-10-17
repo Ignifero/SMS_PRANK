@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>SMS Prank</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-img src="assets/img/logo.png" style="width: 300px; display: block; margin: auto; padding-top: 20px;"></ion-img>
+
+  <!-- Texto con las indicaciones para el uso de la app -->
+  <ion-card style="margin: 20px;">
+    <ion-card-header>
+      <ion-card-title>¿Cómo funciona?</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>1. Ingresa el número de teléfono de la víctima y el mensaje que quieres enviarle. Luego presiona el botón "Enviar".</p>
+      <p>2. No puedes ingresar links ni números de teléfono en el cuerpo del mensaje.</p>
+      <p>3. Tienes 1 mensaje diario. Úsalo sabiamente.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="margin: 20px;">
+    <ion-card-header>
+      <ion-card-title>Envía tu mensaje</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Número Teléfonico</ion-label>
+        <ion-input type="tel" [(ngModel)]="fono" placeholder="+56987654321" pattern="[+0-9]{9,12}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Mensaje</ion-label>
+        <ion-textarea [(ngModel)]="sms" maxlength="70" placeholder="Solo tienes 70 caracteres."></ion-textarea>
+      </ion-item>
+
+      <ion-button expand="block" (click)="sendSMS()">Enviar</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
